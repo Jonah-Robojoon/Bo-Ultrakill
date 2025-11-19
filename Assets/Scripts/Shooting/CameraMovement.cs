@@ -31,6 +31,7 @@ public class CameraMovement : MonoBehaviour
 
 
         player.Rotate(Vector3.up * inputX);
+        player.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 
     }
 }

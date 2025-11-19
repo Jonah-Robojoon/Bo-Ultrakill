@@ -370,6 +370,7 @@ GameObject:
   - component: {fileID: 325071855}
   - component: {fileID: 325071854}
   - component: {fileID: 325071857}
+  - component: {fileID: 325071858}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -495,6 +496,20 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &325071858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325071853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3331b6e313a5d554ba9cef931e1421a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraMovement
+  player: {fileID: 606920327}
+  mouseSensitivity: 2
 --- !u!1 &606920321
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,8 +544,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b2cc52049f1ecc4f8ab3fea3503edde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  speed: 5
-  maxSpeed: 2
+  speed: 20
+  maxSpeed: 25
   JumpHight: 300
   dampaning: 0.3
 --- !u!54 &606920323
