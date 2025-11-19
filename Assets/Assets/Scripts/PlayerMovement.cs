@@ -21,19 +21,39 @@ public class PlayerMovement : MonoBehaviour
     // Used by SmoothDamp to store current velocity for smoothing
     private Vector3 smoothVelocityRef = Vector3.zero;
 
+    // Camera transform used to make movement camera-relative
+    private Transform cam;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        if (Camera.main != null) cam = Camera.main.transform;
     }
-
 
     void FixedUpdate()
     {
+        // Build a world-space target horizontal velocity from input relative to the camera (or fallback to world axes)
+        Vector3 targetHorizontal;
+        if (cam != null)
+        {
+            // Project camera forward/right onto XZ plane
+            Vector3 camForward = cam.forward;
+            camForward.y = 0f;
+            camForward.Normalize();
 
+            Vector3 camRight = cam.right;
+            camRight.y = 0f;
+            camRight.Normalize();
 
-        // Compute desired horizontal target velocity in world units (units/sec)
-        Vector3 targetHorizontal = new Vector3(inputDirection.x, 0f, inputDirection.y) * speed;
+            Vector3 moveDir = camRight * inputDirection.x + camForward * inputDirection.y;
+            if (moveDir.sqrMagnitude > 1f) moveDir.Normalize();
+            targetHorizontal = moveDir * speed;
+        }
+        else
+        {
+            // Fallback: world-relative movement (existing behavior)
+            targetHorizontal = new Vector3(inputDirection.x, 0f, inputDirection.y) * speed;
+        }
 
         // Current full velocity
         var current = rb.linearVelocity;
@@ -75,8 +95,10 @@ public class PlayerMovement : MonoBehaviour
 
         // Preserve current vertical velocity
         rb.linearVelocity = new Vector3(newHorizontal.x, current.y, newHorizontal.z);
-    }
 
+        // Optional: rotate player to face movement direction
+        // if (newHorizontal.sqrMagnitude > 0.01f) transform.rotation = Quaternion.LookRotation(newHorizontal);
+    }
 
     public void OnMove(InputAction.CallbackContext context)
     {
