@@ -8,6 +8,9 @@ public class ShootingMechanic : MonoBehaviour
     [SerializeField] private TrailRenderer BulletTrail;
     [SerializeField] private float shootCooldown = 0.55f;
     [SerializeField] private Animator animator;
+    float shakeAmount = 0.35f;
+    float decreaseFactor = 1.0f;
+    float shake = 0f;
     private float lastShootTime = 0f;
     void Start()
     {
@@ -21,7 +24,17 @@ public class ShootingMechanic : MonoBehaviour
             lastShootTime = Time.time + shootCooldown;
             Shoot();
             animator.SetBool("isShooting", true);
+        }
 
+        if (shake > 0)
+        {
+            mainCamera.transform.localPosition = Random.insideUnitSphere * shakeAmount;
+            shake -= Time.deltaTime * decreaseFactor;
+        }
+        else
+        {
+            mainCamera.transform.localPosition = Vector3.zero;
+            shake = 0f;
         }
     }
 
@@ -31,6 +44,11 @@ public class ShootingMechanic : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hit))
         {
+            if (hit.transform.CompareTag("Enemy"))
+            {
+                shake = 0.2f;
+            }
+
             Debug.Log("Hit: " + hit.transform.name);
             TrailRenderer trail = Instantiate(BulletTrail, BulletSpawnPoint.position, Quaternion.identity);
             StartCoroutine(SpawnTrail(trail, hit));
