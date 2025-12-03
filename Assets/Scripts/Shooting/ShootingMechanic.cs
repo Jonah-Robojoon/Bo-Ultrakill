@@ -12,6 +12,7 @@ public class ShootingMechanic : MonoBehaviour
     float decreaseFactor = 1.0f;
     float shake = 0f;
     private float lastShootTime = 0f;
+    
     void Start()
     {
 
@@ -47,6 +48,8 @@ public class ShootingMechanic : MonoBehaviour
             if (hit.transform.CompareTag("Enemy"))
             {
                 shake = 0.2f;
+                UIStyleMeter.instance.AddStyle(20f);
+                UIStyleMeter.instance.WhatHit("Enemy");
             }
 
             Debug.Log("Hit: " + hit.transform.name);
