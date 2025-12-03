@@ -25,7 +25,7 @@ public class ShootingMechanic : MonoBehaviour
             lastShootTime = Time.time + shootCooldown;
             Shoot();
             animator.SetBool("isShooting", true);
-        }
+            animator.SetTrigger("shouldFlash");
 
         if (shake > 0)
         {
@@ -72,6 +72,7 @@ public class ShootingMechanic : MonoBehaviour
             yield return null;
         }
         animator.SetBool("isShooting", false);
+
         trail.transform.position = endPosition;
         Destroy(trail.gameObject, trail.time);
     }

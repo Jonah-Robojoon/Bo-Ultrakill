@@ -88,13 +88,13 @@ public class PlayerMovement : MonoBehaviour
 
         // Clamp horizontal speed to maxSpeed
         float horizontalMag = new Vector3(newHorizontal.x, 0f, newHorizontal.z).magnitude;
-        if (horizontalMag > maxSpeed)
+        if (horizontalMag > maxSpeed && collisions > 0)
         {
             newHorizontal = newHorizontal.normalized * maxSpeed;
         }
 
-        // Preserve current vertical velocity
-        rb.linearVelocity = new Vector3(newHorizontal.x, current.y, newHorizontal.z);
+            // Preserve current vertical velocity
+            rb.linearVelocity = new Vector3(newHorizontal.x, current.y, newHorizontal.z);
 
         // Optional: rotate player to face movement direction
         // if (newHorizontal.sqrMagnitude > 0.01f) transform.rotation = Quaternion.LookRotation(newHorizontal);
@@ -129,4 +129,6 @@ public class PlayerMovement : MonoBehaviour
     {
         collisions -= 1;
     }
+
+
 }
