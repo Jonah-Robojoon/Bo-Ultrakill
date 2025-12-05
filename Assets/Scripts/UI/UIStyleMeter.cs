@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -70,7 +71,6 @@ public class UIStyleMeter : MonoBehaviour
         {                             
             StyleRankText.text = "<size=70><color=blue>D</color></size>ESTRUCTIVE";
         }*/
-        Vector3 originalscale = image.transform.localScale;
         if (stylePoints >= 1000)
         {
             newSprite = sprites[4];
@@ -86,13 +86,18 @@ public class UIStyleMeter : MonoBehaviour
         else if (stylePoints >= 100)
         {
             newSprite = sprites[1];
-            
+            image.transform.DOScale(new Vector3(4f, 11.7f, 4f), 0.5f);
+
         }
         else
         {
             newSprite = sprites[0];
 
-
         }
     }
+
+    /*IEnumerator SizeScale()
+    {
+        
+    }*/
 }
