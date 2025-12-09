@@ -27,9 +27,10 @@ public class EnemyBodyPart : MonoBehaviour
         Destroy(bodypart);
         _boxCollider.enabled = false;
         _particleSystem.Play();
+        UIStyleMeter.instance.AddStyle(stylepoints);
         yield return new WaitForSeconds(2);
         Destroy(gameObject);
-        UIStyleMeter.instance.AddStyle(stylepoints);
+        
         
     }
 }

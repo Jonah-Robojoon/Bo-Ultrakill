@@ -280,7 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b24dfb3084d024696789ad5f8e6ef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBodyPart
-  stylepoints: 0
+  stylepoints: 100
   bodypart: {fileID: 1104489989}
   _particleSystem: {fileID: 670022799}
 --- !u!65 &90585054
@@ -423,7 +423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b24dfb3084d024696789ad5f8e6ef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBodyPart
-  stylepoints: 0
+  stylepoints: 100
   bodypart: {fileID: 1164725416}
   _particleSystem: {fileID: 1249757116}
 --- !u!65 &130434127
@@ -494,7 +494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b24dfb3084d024696789ad5f8e6ef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBodyPart
-  stylepoints: 0
+  stylepoints: 100
   bodypart: {fileID: 440234003}
   _particleSystem: {fileID: 1054423149}
 --- !u!65 &185131374
@@ -2186,7 +2186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b24dfb3084d024696789ad5f8e6ef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBodyPart
-  stylepoints: 0
+  stylepoints: 100
   bodypart: {fileID: 112308144}
   _particleSystem: {fileID: 1910305728}
 --- !u!65 &1024685810
@@ -3124,7 +3124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b24dfb3084d024696789ad5f8e6ef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBodyPart
-  stylepoints: 0
+  stylepoints: 100
   bodypart: {fileID: 2017361902}
   _particleSystem: {fileID: 1415491480}
 --- !u!65 &1282350471
@@ -3572,7 +3572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b24dfb3084d024696789ad5f8e6ef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBodyPart
-  stylepoints: 0
+  stylepoints: 100
   bodypart: {fileID: 1873566379}
   _particleSystem: {fileID: 360785808}
 --- !u!65 &1725904767
@@ -3915,7 +3915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b24dfb3084d024696789ad5f8e6ef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBodyPart
-  stylepoints: 0
+  stylepoints: 100
   bodypart: {fileID: 1202251503}
   _particleSystem: {fileID: 1375712869}
 --- !u!65 &2013129375
@@ -3986,7 +3986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b24dfb3084d024696789ad5f8e6ef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBodyPart
-  stylepoints: 0
+  stylepoints: 100
   bodypart: {fileID: 1838539822}
   _particleSystem: {fileID: 1276565549}
 --- !u!65 &2015457690
