@@ -41,22 +41,27 @@ public class ShootingMechanic : MonoBehaviour
 
         void Shoot()
         {
-            if (hit.transform.CompareTag("Enemy"))
+            RaycastHit hit;
+            if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hit))
             {
-                shake = 0.2f;
-                //UIStyleMeter.instance.AddStyle(20f);
-                //UIStyleMeter.instance.WhatHit("Enemy");
-                
-                EnemyBodyPart hittingpoint = hit.transform.GetComponent<EnemyBodyPart>();
-
-                StartCoroutine(hittingpoint.GotHit());
-            
-
-                RaycastHit hit;
-            
                 Debug.Log("Hit: " + hit.transform.name);
                 TrailRenderer trail = Instantiate(BulletTrail, BulletSpawnPoint.position, Quaternion.identity);
                 StartCoroutine(SpawnTrail(trail, hit));
+                if (hit.transform.CompareTag("Enemy"))
+                {
+                    shake = 0.2f;
+                    //UIStyleMeter.instance.AddStyle(20f);
+                    //UIStyleMeter.instance.WhatHit("Enemy");
+
+                    EnemyBodyPart hittingpoint = hit.transform.GetComponent<EnemyBodyPart>();
+
+                    StartCoroutine(hittingpoint.GotHit());
+
+
+
+
+                    
+                }
             }
         }
     }
