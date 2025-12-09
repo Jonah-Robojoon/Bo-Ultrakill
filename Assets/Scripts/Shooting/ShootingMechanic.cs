@@ -27,9 +27,7 @@ public class ShootingMechanic : MonoBehaviour
             animator.SetBool("isShooting", true);
             animator.SetTrigger("shouldFlash");
 
-            
         }
-
         if (shake > 0)
         {
             mainCamera.transform.localPosition = Random.insideUnitSphere * shakeAmount;
