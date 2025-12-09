@@ -635,6 +635,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5840930507255300481, guid: 80ce48b6e0bc6bb46aefa6c69209719e, type: 3}
+      propertyPath: m_Intensity
+      value: 185.8
+      objectReference: {fileID: 0}
     - target: {fileID: 6575918634844878681, guid: 80ce48b6e0bc6bb46aefa6c69209719e, type: 3}
       propertyPath: BulletTrail
       value: 
