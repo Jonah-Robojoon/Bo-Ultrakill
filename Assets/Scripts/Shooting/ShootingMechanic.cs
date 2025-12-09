@@ -38,13 +38,8 @@ public class ShootingMechanic : MonoBehaviour
             mainCamera.transform.localPosition = new Vector3(0, 1.5f, 0) + Vector3.zero;
             shake = 0f;
         }
-    }
 
-    void Shoot()
-    {
-
-        RaycastHit hit;
-        if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hit))
+        void Shoot()
         {
             if (hit.transform.CompareTag("Enemy"))
             {
@@ -55,11 +50,14 @@ public class ShootingMechanic : MonoBehaviour
                 EnemyBodyPart hittingpoint = hit.transform.GetComponent<EnemyBodyPart>();
 
                 StartCoroutine(hittingpoint.GotHit());
-            }
+            
 
-            Debug.Log("Hit: " + hit.transform.name);
-            TrailRenderer trail = Instantiate(BulletTrail, BulletSpawnPoint.position, Quaternion.identity);
-            StartCoroutine(SpawnTrail(trail, hit));
+                RaycastHit hit;
+            
+                Debug.Log("Hit: " + hit.transform.name);
+                TrailRenderer trail = Instantiate(BulletTrail, BulletSpawnPoint.position, Quaternion.identity);
+                StartCoroutine(SpawnTrail(trail, hit));
+            }
         }
     }
 
