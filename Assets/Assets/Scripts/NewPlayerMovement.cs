@@ -7,11 +7,13 @@ public class NewPlayerMovement : MonoBehaviour
     [SerializeField] private float _movementSpeed = 10.0f;
     [SerializeField] private float _airMovementSpeed = 5.0f;
     public float gravityScale = 1.0f;
+    public bool usedGravity = true;
 
-    private Vector2 _inputDirection;
+    public Vector2 inputDirection;
     private Rigidbody _rb;
     public int collisions = 0;
     private bool _jumping;
+    public bool allowMovement = true;
 
     private float _jumpTimer;
 
@@ -24,8 +26,15 @@ public class NewPlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!allowMovement && inputDirection != new Vector2(0,0))
+        {
+            inputDirection = new Vector2(0, 0);
+        }
 
-        _rb.AddForce(new Vector3(0, -gravityScale * Time.deltaTime, 0));
+        if (usedGravity)
+        {
+            _rb.AddForce(new Vector3(0, -gravityScale * Time.deltaTime, 0));
+        }
 
 
         _jumpTimer += Time.deltaTime;
@@ -38,29 +47,30 @@ public class NewPlayerMovement : MonoBehaviour
 
         if (collisions == 0)
         {
-            _rb.AddForce(transform.forward * _inputDirection.y * _airMovementSpeed * Time.deltaTime);
-            _rb.AddForce(transform.right * _inputDirection.x * _airMovementSpeed * Time.deltaTime);
+            _rb.AddForce(transform.forward * inputDirection.y * _airMovementSpeed * Time.deltaTime);
+            _rb.AddForce(transform.right * inputDirection.x * _airMovementSpeed * Time.deltaTime);
 
-            _rb.linearDamping = 2;
+            _rb.linearDamping = 0;
         }
         else
         {
 
-            _rb.AddForce(transform.forward * _inputDirection.y * _movementSpeed * Time.deltaTime);
-            _rb.AddForce(transform.right * _inputDirection.x * _movementSpeed * Time.deltaTime);
+            _rb.AddForce(transform.forward * inputDirection.y * _movementSpeed * Time.deltaTime);
+            _rb.AddForce(transform.right * inputDirection.x * _movementSpeed * Time.deltaTime);
             _rb.linearDamping = 5;
         }
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        if (context.started || context.performed)
+
+        if (allowMovement)
         {
-            _inputDirection = context.ReadValue<Vector2>();
+            inputDirection = context.ReadValue<Vector2>();
         }
-        else if (context.canceled)
+        else
         {
-            _inputDirection = Vector2.zero;
+            inputDirection = Vector2.zero;
         }
     }
 
