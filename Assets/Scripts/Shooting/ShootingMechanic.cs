@@ -30,12 +30,12 @@ public class ShootingMechanic : MonoBehaviour
         }
         if (shake > 0)
         {
-            mainCamera.transform.localPosition = Random.insideUnitSphere * shakeAmount;
+            mainCamera.transform.localPosition = new Vector3(0, 1.5f, 0) + Random.insideUnitSphere * shakeAmount;
             shake -= Time.deltaTime * decreaseFactor;
         }
         else
         {
-            mainCamera.transform.localPosition = Vector3.zero;
+            mainCamera.transform.localPosition = new Vector3(0, 1.5f, 0) + Vector3.zero;
             shake = 0f;
         }
     }
@@ -49,8 +49,12 @@ public class ShootingMechanic : MonoBehaviour
             if (hit.transform.CompareTag("Enemy"))
             {
                 shake = 0.2f;
-                UIStyleMeter.instance.AddStyle(20f);
-                UIStyleMeter.instance.WhatHit("Enemy");
+                //UIStyleMeter.instance.AddStyle(20f);
+                //UIStyleMeter.instance.WhatHit("Enemy");
+                
+                EnemyBodyPart hittingpoint = hit.transform.GetComponent<EnemyBodyPart>();
+
+                StartCoroutine(hittingpoint.GotHit());
             }
 
             Debug.Log("Hit: " + hit.transform.name);
