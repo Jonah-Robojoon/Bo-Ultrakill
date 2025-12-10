@@ -28,7 +28,7 @@ public class PlayerDash : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(_playerMovement.allowMovement);
+       // Debug.Log(_playerMovement.allowMovement);
 
         if (_isDashing) { Dash(); }
         if (_isSliding) { Slide(); }
