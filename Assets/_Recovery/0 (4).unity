@@ -281,7 +281,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBodyPart
   stylepoints: 100
-  canExplode: 1
   bodypart: {fileID: 1104489989}
   _particleSystem: {fileID: 670022799}
 --- !u!65 &90585054
@@ -425,7 +424,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBodyPart
   stylepoints: 100
-  canExplode: 1
   bodypart: {fileID: 1164725416}
   _particleSystem: {fileID: 1249757116}
 --- !u!65 &130434127
@@ -497,7 +495,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBodyPart
   stylepoints: 100
-  canExplode: 1
   bodypart: {fileID: 440234003}
   _particleSystem: {fileID: 1054423149}
 --- !u!65 &185131374
@@ -598,6 +595,7 @@ MonoBehaviour:
   newSprite: {fileID: 0}
   image: {fileID: 224123812}
   shakeAmount: 2
+  plane: {fileID: 921242286}
 --- !u!212 &224123815
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -792,7 +790,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBodyPart
   stylepoints: 0
-  canExplode: 1
   bodypart: {fileID: 0}
   _particleSystem: {fileID: 0}
 --- !u!1001 &378527344
@@ -1150,10 +1147,6 @@ PrefabInstance:
     - target: {fileID: 5477960376319417421, guid: 338e63e2f2ca6f04d8954f11c77e407a, type: 3}
       propertyPath: m_Name
       value: gun (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477960376319417421, guid: 338e63e2f2ca6f04d8954f11c77e407a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5506883817609925942, guid: 338e63e2f2ca6f04d8954f11c77e407a, type: 3}
       propertyPath: m_Time
@@ -2195,7 +2188,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBodyPart
   stylepoints: 100
-  canExplode: 1
   bodypart: {fileID: 112308144}
   _particleSystem: {fileID: 1910305728}
 --- !u!65 &1024685810
@@ -2799,6 +2791,7 @@ MonoBehaviour:
   newSprite: {fileID: 0}
   image: {fileID: 0}
   shakeAmount: 2
+  plane: {fileID: 0}
 --- !u!114 &1213191123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2971,10 +2964,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4522224302850364679, guid: 3cc9ed51969ae5744805b6aef9836cdd, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5277122660248397665, guid: 3cc9ed51969ae5744805b6aef9836cdd, type: 3}
       propertyPath: _movementSpeed
       value: 8000
@@ -3022,10 +3011,6 @@ PrefabInstance:
     - target: {fileID: 6266380510717788732, guid: 3cc9ed51969ae5744805b6aef9836cdd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7039073348864308998, guid: 3cc9ed51969ae5744805b6aef9836cdd, type: 3}
-      propertyPath: _dashForce
-      value: 750
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3142,7 +3127,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBodyPart
   stylepoints: 100
-  canExplode: 1
   bodypart: {fileID: 2017361902}
   _particleSystem: {fileID: 1415491480}
 --- !u!65 &1282350471
@@ -3225,6 +3209,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1334000937}
   - component: {fileID: 1334000934}
+  - component: {fileID: 1334000936}
   - component: {fileID: 1334000935}
   m_Layer: 0
   m_Name: UICamera
@@ -3328,6 +3313,14 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!81 &1334000936
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334000933}
+  m_Enabled: 1
 --- !u!4 &1334000937
 Transform:
   m_ObjectHideFlags: 0
@@ -3425,10 +3418,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: new blood explotion particle system Variant
       objectReference: {fileID: 0}
-    - target: {fileID: 5846397300090414876, guid: d034da620d6dfdc45a9eda6d458c55ac, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3492,6 +3481,7 @@ MonoBehaviour:
   newSprite: {fileID: 0}
   image: {fileID: 0}
   shakeAmount: 2
+  plane: {fileID: 0}
 --- !u!114 &1706851145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3586,7 +3576,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBodyPart
   stylepoints: 100
-  canExplode: 1
   bodypart: {fileID: 1873566379}
   _particleSystem: {fileID: 360785808}
 --- !u!65 &1725904767
@@ -3930,7 +3919,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBodyPart
   stylepoints: 100
-  canExplode: 1
   bodypart: {fileID: 1202251503}
   _particleSystem: {fileID: 1375712869}
 --- !u!65 &2013129375
@@ -4002,7 +3990,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBodyPart
   stylepoints: 100
-  canExplode: 1
   bodypart: {fileID: 1838539822}
   _particleSystem: {fileID: 1276565549}
 --- !u!65 &2015457690
