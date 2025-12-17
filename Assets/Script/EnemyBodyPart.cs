@@ -7,7 +7,8 @@ public class EnemyBodyPart : MonoBehaviour
     private ShootingMechanic _shooting;
     private BoxCollider _boxCollider;
 
-    [SerializeField] private float stylepoints; 
+    [SerializeField] private float stylepoints;
+    [SerializeField] private bool canExplode = true;
     [SerializeField] GameObject bodypart;
     [SerializeField] private ParticleSystem _particleSystem;
 
@@ -24,7 +25,10 @@ public class EnemyBodyPart : MonoBehaviour
     }
     public IEnumerator GotHit() 
     {
-        Destroy(bodypart);
+        if (canExplode)
+        {
+            Destroy(bodypart);
+        }
         _boxCollider.enabled = false;
         _particleSystem.Play();
         UIStyleMeter.instance.AddStyle(stylepoints);
