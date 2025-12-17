@@ -1,4 +1,5 @@
 using System.Collections;
+using DG.Tweening.Core.Easing;
 using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -19,16 +20,23 @@ public class PlayerDash : MonoBehaviour
     private bool _isSliding = false;
 
     private Rigidbody _rb;
+    private CapsuleCollider _capsuleCollider;
     private Vector3 _forwardHold;
     private float _timer;
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        _capsuleCollider = GetComponent<CapsuleCollider>();
     }
 
     private void Update()
     {
-       // Debug.Log(_playerMovement.allowMovement);
+        // Debug.Log(_playerMovement.allowMovement);
+
+        if (_isSliding == false && _capsuleCollider.height != 2) 
+        {
+            _capsuleCollider.height = 2f; 
+        }
 
         if (_isDashing) { Dash(); }
         if (_isSliding) { Slide(); }
@@ -75,7 +83,7 @@ public class PlayerDash : MonoBehaviour
         if (context.started && _playerMovement.collisions > 0 || context.performed && _playerMovement.collisions > 0)
         {
 
-            transform.localScale = new Vector3(transform.localScale.x, 0.5f, transform.localScale.z);
+            _capsuleCollider.height = 0.5f;
 
             Vector2 input = _playerMovement.inputDirection;
 
@@ -99,7 +107,7 @@ public class PlayerDash : MonoBehaviour
 
         else if (context.canceled)
         {
-            transform.localScale = new Vector3(transform.localScale.x, 1f, transform.localScale.z);
+            
             _isSliding = false;
             _playerMovement.allowMovement = true;
         }
@@ -148,6 +156,8 @@ public class PlayerDash : MonoBehaviour
 
     private void Slide()
     {
+
+
         if (_playerMovement.collisions > 0)
         {
             _rb.AddForce(_forwardHold * _slideForce * Time.deltaTime, ForceMode.VelocityChange);

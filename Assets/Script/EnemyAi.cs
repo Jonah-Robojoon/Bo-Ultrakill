@@ -16,6 +16,7 @@ public class EnemyAi : MonoBehaviour
     private bool alreadyAttacked = false;
     public float attackCooldown = 1.5f;
     private bool _stopMovement = false;
+    public bool _isDeing = false;
 
     [SerializeField] private Transform _rotatable;
 
@@ -35,8 +36,13 @@ public class EnemyAi : MonoBehaviour
 
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
+
+        if (_isDeing == true) 
+        {
+            anim.SetBool("isDeing", true);
+        }
         if (player == null) return;
 
         float dist = Vector3.Distance(transform.position, player.position);
@@ -64,7 +70,7 @@ public class EnemyAi : MonoBehaviour
         }
 
         // animation speed matches movement (optional but fixes skating)
-        anim.SetFloat("Speed", agent.velocity.magnitude);
+        //anim.SetFloat("Speed", agent.velocity.magnitude);
     }
 
     void ChasePlayer()

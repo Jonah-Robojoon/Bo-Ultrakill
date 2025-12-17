@@ -142,6 +142,7 @@ GameObject:
   - component: {fileID: 3564640226662451942}
   - component: {fileID: 8501350312574171936}
   - component: {fileID: 4900193296993048075}
+  - component: {fileID: 908353293756124936}
   m_Layer: 0
   m_Name: left upper leg_low
   m_TagString: Untagged
@@ -220,6 +221,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &908353293756124936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978802052726980734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44b24dfb3084d024696789ad5f8e6ef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyBodyPart
+  stylepoints: 0
+  canExplode: 1
+  bodypart: {fileID: 0}
+  _particleSystem: {fileID: 8895398578651948225, guid: d034da620d6dfdc45a9eda6d458c55ac, type: 3}
+  _meshRenderer: {fileID: 0}
 --- !u!1 &2078148305465795057
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,6 +482,8 @@ GameObject:
   - component: {fileID: 5316971139996593353}
   - component: {fileID: 290982964637073802}
   - component: {fileID: 8522978522123218858}
+  - component: {fileID: 7554806509652504032}
+  - component: {fileID: 2528265090460260875}
   m_Layer: 0
   m_Name: upper torso_low
   m_TagString: Untagged
@@ -542,6 +562,40 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7554806509652504032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4178693958295153574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44b24dfb3084d024696789ad5f8e6ef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyBodyPart
+  stylepoints: 0
+  canExplode: 1
+  bodypart: {fileID: 4178693958295153574}
+  _particleSystem: {fileID: 8895398578651948225, guid: d034da620d6dfdc45a9eda6d458c55ac, type: 3}
+  _meshRenderer: {fileID: 0}
+--- !u!114 &2528265090460260875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4178693958295153574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44b24dfb3084d024696789ad5f8e6ef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyBodyPart
+  stylepoints: 0
+  canExplode: 1
+  bodypart: {fileID: 0}
+  _particleSystem: {fileID: 0}
+  _meshRenderer: {fileID: 0}
 --- !u!1 &4287065229088631424
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,6 +782,7 @@ GameObject:
   - component: {fileID: 1228509906053466699}
   - component: {fileID: 2625611290079825769}
   - component: {fileID: 5932725376758284703}
+  - component: {fileID: 5669315991218026232}
   m_Layer: 0
   m_Name: leeft lower leg_low
   m_TagString: Untagged
@@ -806,6 +861,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5669315991218026232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4469388092497360380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44b24dfb3084d024696789ad5f8e6ef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyBodyPart
+  stylepoints: 0
+  canExplode: 1
+  bodypart: {fileID: 0}
+  _particleSystem: {fileID: 8895398578651948225, guid: d034da620d6dfdc45a9eda6d458c55ac, type: 3}
+  _meshRenderer: {fileID: 0}
 --- !u!1 &4490235279733684621
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,6 +889,7 @@ GameObject:
   - component: {fileID: 4388232066205536874}
   - component: {fileID: 4678027286033565449}
   - component: {fileID: 358264094500841020}
+  - component: {fileID: 1965432609543526756}
   m_Layer: 0
   m_Name: left foot_low
   m_TagString: Untagged
@@ -895,6 +968,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1965432609543526756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4490235279733684621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44b24dfb3084d024696789ad5f8e6ef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyBodyPart
+  stylepoints: 0
+  canExplode: 1
+  bodypart: {fileID: 0}
+  _particleSystem: {fileID: 8895398578651948225, guid: d034da620d6dfdc45a9eda6d458c55ac, type: 3}
+  _meshRenderer: {fileID: 0}
 --- !u!1 &5284770950576498363
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,6 +996,7 @@ GameObject:
   - component: {fileID: 1173049085331940068}
   - component: {fileID: 6977185847684832400}
   - component: {fileID: 7153867334144779134}
+  - component: {fileID: 3591662290369833435}
   m_Layer: 0
   m_Name: right lower leg_low
   m_TagString: Untagged
@@ -984,6 +1075,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3591662290369833435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5284770950576498363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44b24dfb3084d024696789ad5f8e6ef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyBodyPart
+  stylepoints: 0
+  canExplode: 1
+  bodypart: {fileID: 0}
+  _particleSystem: {fileID: 8895398578651948225, guid: d034da620d6dfdc45a9eda6d458c55ac, type: 3}
+  _meshRenderer: {fileID: 0}
 --- !u!1 &5542107980920872286
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,6 +1134,7 @@ GameObject:
   - component: {fileID: 5684027201873367080}
   - component: {fileID: 6204693451768370615}
   - component: {fileID: 5746296201424517308}
+  - component: {fileID: 3233917865065924216}
   m_Layer: 0
   m_Name: head_low
   m_TagString: Untagged
@@ -1104,6 +1213,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3233917865065924216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5741412811034300751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44b24dfb3084d024696789ad5f8e6ef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyBodyPart
+  stylepoints: 0
+  canExplode: 1
+  bodypart: {fileID: 0}
+  _particleSystem: {fileID: 8895398578651948225, guid: d034da620d6dfdc45a9eda6d458c55ac, type: 3}
+  _meshRenderer: {fileID: 0}
 --- !u!1 &5994816677755431193
 GameObject:
   m_ObjectHideFlags: 0
@@ -1442,6 +1568,7 @@ GameObject:
   - component: {fileID: 3185667198313127481}
   - component: {fileID: 1792186622191784025}
   - component: {fileID: 5250814758855428992}
+  - component: {fileID: 1872229678090074668}
   m_Layer: 0
   m_Name: lower torso_low
   m_TagString: Untagged
@@ -1520,6 +1647,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1872229678090074668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8274617092286221538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44b24dfb3084d024696789ad5f8e6ef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyBodyPart
+  stylepoints: 0
+  canExplode: 1
+  bodypart: {fileID: 0}
+  _particleSystem: {fileID: 8895398578651948225, guid: d034da620d6dfdc45a9eda6d458c55ac, type: 3}
+  _meshRenderer: {fileID: 0}
 --- !u!1 &8760863922806854891
 GameObject:
   m_ObjectHideFlags: 0
@@ -1531,6 +1675,7 @@ GameObject:
   - component: {fileID: 5743421120262093120}
   - component: {fileID: 7765286319676735516}
   - component: {fileID: 2129685725444570026}
+  - component: {fileID: 204324310576536856}
   m_Layer: 0
   m_Name: right foot_low
   m_TagString: Untagged
@@ -1609,6 +1754,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &204324310576536856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8760863922806854891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44b24dfb3084d024696789ad5f8e6ef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyBodyPart
+  stylepoints: 0
+  canExplode: 1
+  bodypart: {fileID: 0}
+  _particleSystem: {fileID: 8895398578651948225, guid: d034da620d6dfdc45a9eda6d458c55ac, type: 3}
+  _meshRenderer: {fileID: 0}
 --- !u!1 &8815996137640620416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1620,6 +1782,7 @@ GameObject:
   - component: {fileID: 8354938708592941806}
   - component: {fileID: 729203938593641260}
   - component: {fileID: 470505333111666831}
+  - component: {fileID: 8642407177740165297}
   m_Layer: 0
   m_Name: right upper leg_low
   m_TagString: Untagged
@@ -1698,6 +1861,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8642407177740165297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8815996137640620416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44b24dfb3084d024696789ad5f8e6ef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyBodyPart
+  stylepoints: 0
+  canExplode: 1
+  bodypart: {fileID: 0}
+  _particleSystem: {fileID: 8895398578651948225, guid: d034da620d6dfdc45a9eda6d458c55ac, type: 3}
+  _meshRenderer: {fileID: 0}
 --- !u!1 &9057893955595093154
 GameObject:
   m_ObjectHideFlags: 0
