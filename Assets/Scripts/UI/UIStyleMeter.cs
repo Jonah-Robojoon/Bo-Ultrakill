@@ -1,4 +1,6 @@
+using DG.Tweening;
 using System.Collections;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +16,9 @@ public class UIStyleMeter : MonoBehaviour
     [SerializeField] private float shakeAmount = 2f;
     public static UIStyleMeter instance;
     private string currentHitType = "";
+    private bool IsScaling = false;
+    private int lastRank = -1;
+
 
 
 
@@ -36,6 +41,35 @@ public class UIStyleMeter : MonoBehaviour
         }*/
         gameObject.GetComponent<SpriteRenderer>().sprite = newSprite;
         UpdateRank();
+
+        //if (IsScaling) { StartCoroutine(SizeScale()); }
+
+        /*if (stylePoints >= 1000)
+        {
+            
+        }
+        else if (stylePoints >= 500)
+        {
+            IsScaling = true;
+
+        }
+        else if (stylePoints >= 250)
+        {
+            IsScaling = true;
+
+        }
+        else if (stylePoints >= 100)
+        {
+            IsScaling = true;
+        }
+        else
+        {
+
+            
+
+        }*/
+
+
     }
 
     public void AddStyle(float amount)
@@ -70,29 +104,56 @@ public class UIStyleMeter : MonoBehaviour
         {                             
             StyleRankText.text = "<size=70><color=blue>D</color></size>ESTRUCTIVE";
         }*/
-        Vector3 originalscale = image.transform.localScale;
+        int currentRank = -1;
         if (stylePoints >= 1000)
         {
             newSprite = sprites[4];
+            currentRank = 4;
         }
         else if (stylePoints >= 500)
         {
             newSprite = sprites[3];
+            currentRank = 3;
         }
         else if (stylePoints >= 250)
         {
             newSprite = sprites[2];
+            currentRank = 2;
         }
         else if (stylePoints >= 100)
         {
             newSprite = sprites[1];
-            
+            currentRank = 1;
+
         }
         else
         {
             newSprite = sprites[0];
-
+            currentRank = 0;
 
         }
+
+        if (currentRank != lastRank && currentRank != -1)
+        {
+            if (!IsScaling)
+            {
+                StartCoroutine(SizeScale());
+            }
+        }
+
+        lastRank = currentRank;
+    }
+
+    IEnumerator SizeScale()
+    {
+
+        IsScaling = true;
+        image.transform.DOScale(new Vector3(4.5f, 15f, 4.5f), 0.1f);
+        yield return new WaitForSeconds(0.1f);
+        image.transform.DOScale(new Vector3(3.2f, 11f, 3.2f), 0.1f);
+
+        yield return new WaitForSeconds(0.1f);
+
+        IsScaling = false;
     }
 }
