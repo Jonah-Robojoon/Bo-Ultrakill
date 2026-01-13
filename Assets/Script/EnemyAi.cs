@@ -17,6 +17,9 @@ public class EnemyAi : MonoBehaviour
     public float attackCooldown = 1.5f;
     private bool _stopMovement = false;
     public bool _isDeing = false;
+    private bool inAttack;
+    private bool inSight;
+    private float dist;
 
     [SerializeField] private Transform _rotatable;
 
@@ -35,7 +38,15 @@ public class EnemyAi : MonoBehaviour
         agent.stoppingDistance = attackRange * 0.9f; // avoid sliding close
 
     }
+    private void Update()
+    {
+        dist = Vector3.Distance(transform.position, player.position);
 
+        inSight = dist <= sightRange;
+
+
+        inAttack = dist <= attackRange;
+    }
     private void FixedUpdate()
     {
 
@@ -45,10 +56,11 @@ public class EnemyAi : MonoBehaviour
         }
         if (player == null) return;
 
-        float dist = Vector3.Distance(transform.position, player.position);
+        
 
-        bool inSight = dist <= sightRange;
-        bool inAttack = dist <= attackRange;
+        
+        
+        
 
         if (inAttack)
         {

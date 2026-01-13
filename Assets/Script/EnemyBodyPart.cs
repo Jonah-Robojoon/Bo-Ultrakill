@@ -46,7 +46,7 @@ public class EnemyBodyPart : MonoBehaviour
         {
             EnemyAi _ai = gameObject.GetComponentInParent<EnemyAi>();
             _ai._isDeing = true;
-            yield return new WaitForSeconds(0.001f);
+            yield return new WaitForSeconds(0.02f);
             _ai.enabled = false;
         }
         UIStyleMeter.instance.AddStyle(stylepoints);
