@@ -54,7 +54,7 @@ public class ShootingMechanic : MonoBehaviour
                     shake = 0.2f;
                     //UIStyleMeter.instance.AddStyle(20f);
                     //UIStyleMeter.instance.WhatHit("Enemy");
-                    //feed.AddEntry("+ KILL");
+                    feed.AddEntry("+ KILL");
                     EnemyBodyPart hittingpoint = hit.transform.GetComponent<EnemyBodyPart>();
 
                     StartCoroutine(hittingpoint.GotHit());
