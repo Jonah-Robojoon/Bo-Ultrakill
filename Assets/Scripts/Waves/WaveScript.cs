@@ -24,6 +24,10 @@ public class WaveScript : MonoBehaviour
     {
         foreach (var enemy in _Enemies)
         {
+            if (enemy == null)
+            {
+                return;
+            }
             if (enemy.GetComponentInChildren<EnemyAi>()._isDeing == true)
             {
                 _AllEnemiesDead = true;
