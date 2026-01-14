@@ -120,12 +120,16 @@ public class PlayerDash : MonoBehaviour
             _playerMovement.allowMovement = true;
             _isDashing = false;
         }
-        
+
         if (_isSliding)
         {
-            transform.localScale = new Vector3(transform.localScale.x, 1f, transform.localScale.z);
+            //transform.localScale = new Vector3(transform.localScale.x, 1f, transform.localScale.z);
             _isSliding = false;
             _playerMovement.allowMovement = true;
+        }
+        else
+        {
+            //transform.localScale = new Vector3(transform.localScale.x, 2f, transform.localScale.z);
         }
     }
 

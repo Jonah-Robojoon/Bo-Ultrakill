@@ -10,7 +10,6 @@ public class EnemyBodyPart : MonoBehaviour
     private GameObject _bloodExplosion;
 
     [SerializeField] private float stylepoints;
-    [SerializeField] private bool canExplode = true;
     [SerializeField] GameObject bodypart;
     [SerializeField] private GameObject _particleSystem;
     
@@ -29,10 +28,7 @@ public class EnemyBodyPart : MonoBehaviour
     }
     public IEnumerator GotHit() 
     {
-        if (canExplode)
-        {
-            Destroy(bodypart);
-        }
+        
         if (_meshRenderer != null)
         {
             _meshRenderer.enabled = false;
@@ -42,13 +38,13 @@ public class EnemyBodyPart : MonoBehaviour
         _bloodExplosion = Instantiate(_particleSystem, transform.position, Quaternion.identity);
         ParticleSystem bloodparticle = _bloodExplosion.GetComponent<ParticleSystem>();
         bloodparticle.Play();
-        if (canExplode == false)
-        {
+        
+           
             EnemyAi _ai = gameObject.GetComponentInParent<EnemyAi>();
             _ai._isDeing = true;
             yield return new WaitForSeconds(0.02f);
             _ai.enabled = false;
-        }
+        
         UIStyleMeter.instance.AddStyle(stylepoints);
         Destroy(gameObject);
         yield return new WaitForSeconds(2);
