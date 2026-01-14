@@ -10,6 +10,7 @@ public class PlayerDash : MonoBehaviour
     [SerializeField] private float _dashForce = 50f;
     [SerializeField] private float _airDashForce = 25f;
     [SerializeField] private float _slideForce = 25f;
+    [SerializeField] private float _slamForce = 25f;
     [SerializeField] private float _pushDash = 25f;
 
     [SerializeField] private float _InitialDashPush = 10f;
@@ -105,6 +106,14 @@ public class PlayerDash : MonoBehaviour
             _isSliding = true;
         }
 
+        else if (context.started && _playerMovement.collisions == 0 || context.performed && _playerMovement.collisions == 0) 
+        {
+            //Debug.Log("help");
+            _rb.linearVelocity = Vector3.zero;
+            _rb.AddForce(Vector3.down * _slamForce / 100, ForceMode.Impulse);
+            _rb.AddForce(Vector3.down * _slamForce * Time.deltaTime, ForceMode.VelocityChange);
+        }
+
         else if (context.canceled)
         {
             
@@ -166,5 +175,6 @@ public class PlayerDash : MonoBehaviour
         {
             _rb.AddForce(_forwardHold * _slideForce * Time.deltaTime, ForceMode.VelocityChange);
         }
+       
     }
 }
