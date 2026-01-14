@@ -74,13 +74,13 @@ public class EnemyAi : MonoBehaviour
         {
             StopMoving();
         }
-
+        RotateTowardsTarget();
         // Smooth rotation only when allowed & not inside attack range
-        if (!_stopMovement && dist > attackRange)
+        /*if (!_stopMovement && dist > attackRange)
         {
             RotateTowardsTarget();
         }
-
+        */
         // animation speed matches movement (optional but fixes skating)
         //anim.SetFloat("Speed", agent.velocity.magnitude);
     }
@@ -144,7 +144,7 @@ public class EnemyAi : MonoBehaviour
         _rotatable.rotation = Quaternion.Slerp(
             _rotatable.rotation,
             rotated,
-            5f * Time.deltaTime  // rotation smoothness
+            100f * Time.deltaTime  // rotation smoothness
         );
     }
 }

@@ -60,7 +60,7 @@ public class ShootingMechanic : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hit, 100f))
             {
-                Debug.Log("Hit: " + hit.transform.name);
+                //Debug.Log("Hit: " + hit.transform.name);
                 
                 
                 TrailRenderer trail = Instantiate(BulletTrail, BulletSpawnPoint.position, Quaternion.identity);
