@@ -12,7 +12,8 @@ public class ShootingMechanic : MonoBehaviour
     float decreaseFactor = 1.0f;
     float shake = 0f;
     private float lastShootTime = 0f;
-    
+    [SerializeField] private TextPopup feed;
+
     void Start()
     {
 
@@ -24,8 +25,7 @@ public class ShootingMechanic : MonoBehaviour
         {
             lastShootTime = Time.time + shootCooldown;
             Shoot();
-            animator.SetBool("isShooting", true);
-            animator.SetTrigger("shouldFlash");
+            
 
         }
         if (shake > 0)
@@ -41,6 +41,8 @@ public class ShootingMechanic : MonoBehaviour
 
         void Shoot()
         {
+            animator.SetBool("isShooting", true);
+            animator.SetTrigger("shouldFlash");
             RaycastHit hit;
             if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hit))
             {
@@ -52,14 +54,10 @@ public class ShootingMechanic : MonoBehaviour
                     shake = 0.2f;
                     //UIStyleMeter.instance.AddStyle(20f);
                     //UIStyleMeter.instance.WhatHit("Enemy");
-
+                    //feed.AddEntry("+ KILL");
                     EnemyBodyPart hittingpoint = hit.transform.GetComponent<EnemyBodyPart>();
 
                     StartCoroutine(hittingpoint.GotHit());
-
-
-
-
                     
                 }
             }
