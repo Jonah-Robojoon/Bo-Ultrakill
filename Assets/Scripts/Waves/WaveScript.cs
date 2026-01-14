@@ -44,7 +44,6 @@ public class WaveScript : MonoBehaviour
         if (_currentWave == 2)
         {
             _timer += Time.deltaTime;
-            Debug.Log(_timer);
 
             if (_timer >= 1f && !_waveTwoStarted)
             {
