@@ -24,6 +24,10 @@ public class WaveScript : MonoBehaviour
     {
         foreach (var enemy in _Enemies)
         {
+            if (enemy == null)
+            {
+                return;
+            }
             if (enemy.GetComponentInChildren<EnemyAi>()._isDeing == true)
             {
                 _AllEnemiesDead = true;
@@ -44,7 +48,6 @@ public class WaveScript : MonoBehaviour
         if (_currentWave == 2)
         {
             _timer += Time.deltaTime;
-            Debug.Log(_timer);
 
             if (_timer >= 1f && !_waveTwoStarted)
             {
