@@ -19,6 +19,25 @@ MonoBehaviour:
   cropToFit:
     m_OverrideState: 1
     m_Value: 1
+--- !u!114 &-3516116771072659083
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 221518ef91623a7438a71fef23660601, type: 3}
+  m_Name: WhiteBalance
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.WhiteBalance
+  active: 1
+  temperature:
+    m_OverrideState: 1
+    m_Value: 51
+  tint:
+    m_OverrideState: 1
+    m_Value: 22
 --- !u!114 &-28743713266752547
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -63,6 +82,7 @@ MonoBehaviour:
   - {fileID: 2996182360659494229}
   - {fileID: -4365809425990151630}
   - {fileID: -28743713266752547}
+  - {fileID: -3516116771072659083}
 --- !u!114 &2996182360659494229
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -84,7 +104,7 @@ MonoBehaviour:
     m_Value: 1.04
   intensity:
     m_OverrideState: 1
-    m_Value: 7.14
+    m_Value: 8.8
   scatter:
     m_OverrideState: 1
     m_Value: 0.83
