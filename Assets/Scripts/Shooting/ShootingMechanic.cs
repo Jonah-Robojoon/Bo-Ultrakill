@@ -28,6 +28,8 @@ public class ShootingMechanic : MonoBehaviour
     private float lastShootTime = 0f;
 
     private GameObject TheHitParticle;
+    [SerializeField] private TextPopup feed;
+
     void Start()
     {
         
@@ -57,6 +59,8 @@ public class ShootingMechanic : MonoBehaviour
 
         public void Shoot()
         {
+            animator.SetBool("isShooting", true);
+            animator.SetTrigger("shouldFlash");
             RaycastHit hit;
             if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hit, 100f))
             {
@@ -74,14 +78,10 @@ public class ShootingMechanic : MonoBehaviour
                     shake = 0.2f;
                     //UIStyleMeter.instance.AddStyle(20f);
                     //UIStyleMeter.instance.WhatHit("Enemy");
-
+                    feed.AddEntry("+ KILL");
                     EnemyBodyPart hittingpoint = hit.transform.GetComponent<EnemyBodyPart>();
 
                     StartCoroutine(hittingpoint.GotHit());
-
-
-
-
                     
                 }
             }
