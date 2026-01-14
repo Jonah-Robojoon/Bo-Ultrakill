@@ -76,10 +76,10 @@ public class ShootingMechanic : MonoBehaviour
                 if (hit.transform.CompareTag("Enemy"))
                 {
                     shake = 0.2f;
-                    //UIStyleMeter.instance.AddStyle(20f);
-                    //UIStyleMeter.instance.WhatHit("Enemy");
-                    feed.AddEntry("+ KILL");
-                    EnemyBodyPart hittingpoint = hit.transform.GetComponent<EnemyBodyPart>();
+                //UIStyleMeter.instance.AddStyle(20f);
+                //UIStyleMeter.instance.WhatHit("Enemy");
+                feed.AddEntry("+ KILL");
+                EnemyBodyPart hittingpoint = hit.transform.GetComponent<EnemyBodyPart>();
 
                     StartCoroutine(hittingpoint.GotHit());
                     
