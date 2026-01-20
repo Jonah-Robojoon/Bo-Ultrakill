@@ -24,9 +24,8 @@ public class EnemyAi : MonoBehaviour
 
     [SerializeField] private Transform _rotatable;
 
-    public Action onPlayerHit;
-
-    public static event Action playerHit;
+    public static Action onPlayerHit;
+    public static Action onPlayerHeal;
 
     private void Awake()
     {
@@ -57,6 +56,7 @@ public class EnemyAi : MonoBehaviour
 
         if (_isDeing == true) 
         {
+            HealPlayer();
             anim.SetBool("isDeing", true);
         }
         if (player == null) return;
@@ -158,8 +158,20 @@ public class EnemyAi : MonoBehaviour
     private void DamagePlayerDuringAttack()
     {
         float _Playerdistance = Vector3.Distance(transform.position, player.transform.position);
-        if (_Playerdistance <= 2){
+        
+        if (_Playerdistance <= attackRange)
+        {
             onPlayerHit?.Invoke();
+        }
+    }
+
+    private void HealPlayer()
+    {
+        float _Playerdistance = Vector3.Distance(transform.position, player.transform.position);
+        
+        if (_Playerdistance <= attackRange)
+        {
+            onPlayerHeal?.Invoke();
         }
     }
 }
