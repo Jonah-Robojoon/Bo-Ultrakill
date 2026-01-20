@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2389618879498832399, guid: 081b6560a58d75b4482381ac2c61aa00, type: 3}
       propertyPath: stylepoints
-      value: 300
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 2638537777042026408, guid: 081b6560a58d75b4482381ac2c61aa00, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -246,27 +246,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7835525942886172760, guid: 081b6560a58d75b4482381ac2c61aa00, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.34327045
+      value: 0.42456317
       objectReference: {fileID: 0}
     - target: {fileID: 7835525942886172760, guid: 081b6560a58d75b4482381ac2c61aa00, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.34327045
+      value: 0.42456317
       objectReference: {fileID: 0}
     - target: {fileID: 7835525942886172760, guid: 081b6560a58d75b4482381ac2c61aa00, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.34327045
+      value: 0.42456317
       objectReference: {fileID: 0}
     - target: {fileID: 7835525942886172760, guid: 081b6560a58d75b4482381ac2c61aa00, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.813
+      value: -4.8171
       objectReference: {fileID: 0}
     - target: {fileID: 7835525942886172760, guid: 081b6560a58d75b4482381ac2c61aa00, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.933
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 7835525942886172760, guid: 081b6560a58d75b4482381ac2c61aa00, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 30.302
+      value: 30.313
       objectReference: {fileID: 0}
     - target: {fileID: 7835525942886172760, guid: 081b6560a58d75b4482381ac2c61aa00, type: 3}
       propertyPath: m_LocalRotation.w
@@ -346,6 +346,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBodyPart
   stylepoints: 250
-  canExplode: 0
   bodypart: {fileID: 0}
   _particleSystem: {fileID: 5846397300090414876, guid: d034da620d6dfdc45a9eda6d458c55ac, type: 3}
