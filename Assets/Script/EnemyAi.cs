@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -22,6 +23,10 @@ public class EnemyAi : MonoBehaviour
     private float dist;
 
     [SerializeField] private Transform _rotatable;
+
+    public Action onPlayerHit;
+
+    public static event Action playerHit;
 
     private void Awake()
     {
@@ -117,6 +122,7 @@ public class EnemyAi : MonoBehaviour
         if (!alreadyAttacked)
         {
             anim.SetBool("isBiting", true);
+            DamagePlayerDuringAttack();
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), attackCooldown);
@@ -146,5 +152,14 @@ public class EnemyAi : MonoBehaviour
             rotated,
             100f * Time.deltaTime  // rotation smoothness
         );
+    }
+
+
+    private void DamagePlayerDuringAttack()
+    {
+        float _Playerdistance = Vector3.Distance(transform.position, player.transform.position);
+        if (_Playerdistance <= 2){
+            onPlayerHit?.Invoke();
+        }
     }
 }
