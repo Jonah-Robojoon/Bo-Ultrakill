@@ -1,24 +1,48 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class HealthManager : MonoBehaviour
 {
-    private int _health = 0;
-    private TextMeshProUGUI _scoreText;
+    [SerializeField] private Slider healthSlider;
+    private float _health = 1f;
+
+    private float _timer;
+    
     void Start()
     {
-        EnemyAi.playerHit += OnHit;
-        _scoreText = GetComponent<TextMeshProUGUI>();
+        EnemyAi.onPlayerHit += OnHit;
+        EnemyAi.onPlayerHeal += OnHeal;
+
     }
+    private void FixedUpdate()
+    {
+        healthSlider.value = Mathf.Lerp(healthSlider.value, _health, 0.1f);
+    }
+
+    private void Update()
+    {
+        _timer =+ Time.deltaTime;
+    }
+
     void OnDisable()
     {
-        EnemyAi.playerHit -= OnHit;
-
+        EnemyAi.onPlayerHit -= OnHit;
+        EnemyAi.onPlayerHeal -= OnHeal;
     }
     void OnHit()
     {
-        _health -= 1;
-        _scoreText.text = "Score: " + _health;
+        if (healthSlider.value < 0.5f) return;
+        _timer = 0f;
+        Debug.Log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+        _health -= 0.1f;
+        
+    }
+    void OnHeal()
+    {
+        
+        Debug.Log("healed");
+        _health += 0.4f;
     }
 }
