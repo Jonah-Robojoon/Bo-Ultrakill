@@ -5557,7 +5557,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   _enemyPrefab: {fileID: 3392835336888320991, guid: 1678ab60cccc9bd4ab8f80445c770ba5, type: 3}
+<<<<<<< HEAD
+<<<<<<< HEAD
+  _door: {fileID: 0}
+=======
   _door: {fileID: 361540396}
+>>>>>>> f9f170405ec55113020f1f52fac40c2d3f558268
+=======
+  _door: {fileID: 361540396}
+>>>>>>> 587a91243b1df31ec7ef2366676751de2393e31a
 --- !u!4 &1921430319
 Transform:
   m_ObjectHideFlags: 0
