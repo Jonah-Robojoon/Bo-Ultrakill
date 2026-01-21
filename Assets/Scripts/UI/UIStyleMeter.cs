@@ -14,6 +14,10 @@ public class UIStyleMeter : MonoBehaviour
     [SerializeField] private Sprite newSprite;
     [SerializeField] private GameObject image;
     [SerializeField] private float shakeAmount = 2f;
+    [SerializeField] private Slider styleSlider;
+    [SerializeField] private GameObject[] gameObjects;
+    [SerializeField] private SpriteRenderer sr;
+    [SerializeField] private Canvas Canvas;
     public static UIStyleMeter instance;
     private string currentHitType = "";
     private bool IsScaling = false;
@@ -29,18 +33,51 @@ public class UIStyleMeter : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*if (stylePoints > 0)
+        if (stylePoints > 0)
         {
             stylePoints -= styleDecayRate * Time.deltaTime;
-        }*/
+        }
         gameObject.GetComponent<SpriteRenderer>().sprite = newSprite;
         UpdateRank();
+
+        if (styleSlider != null)
+        {
+            styleSlider.value = stylePoints;
+        }
+
+        if (stylePoints <= 0)
+        {
+            sr.enabled = false;
+            Canvas.enabled = false;
+            foreach (GameObject go in gameObjects)
+            {
+                var meshRenderer = go.GetComponent<MeshRenderer>();
+                if (meshRenderer != null)
+                {
+                    meshRenderer.enabled = false;
+                    
+                }
+            }
+        } 
+        else
+        {
+            foreach (GameObject go in gameObjects)
+            { 
+                sr.enabled = true;
+                Canvas.enabled = true;
+                var meshRenderer = go.GetComponent<MeshRenderer>();
+                if (meshRenderer != null)
+                {
+                    meshRenderer.enabled = true;
+                }
+            }
+        }
 
         //if (IsScaling) { StartCoroutine(SizeScale()); }
 

@@ -18,6 +18,10 @@ public class TextPopup : MonoBehaviour
         template.gameObject.SetActive(false);
     }
 
+    private void Update()
+    {
+       
+    }
     public void AddEntry(string text)
     {
         
