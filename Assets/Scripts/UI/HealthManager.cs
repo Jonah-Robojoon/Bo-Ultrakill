@@ -1,7 +1,6 @@
-using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthManager : MonoBehaviour
 {
@@ -19,6 +18,10 @@ public class HealthManager : MonoBehaviour
     private void FixedUpdate()
     {
         healthSlider.value = Mathf.Lerp(healthSlider.value, _health, 0.1f);
+        if (healthSlider.value <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     private void Update()
@@ -33,16 +36,16 @@ public class HealthManager : MonoBehaviour
     }
     void OnHit()
     {
-        if (healthSlider.value < 0.5f) return;
+        //Debug.Log("damagee");
+        if (_timer > 0.5f) return;
         _timer = 0f;
-        Debug.Log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
         _health -= 0.1f;
         
     }
     void OnHeal()
     {
         
-        Debug.Log("healed");
+        //Debug.Log("healed");
         _health += 0.4f;
     }
 }

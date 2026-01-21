@@ -1,6 +1,3 @@
-using System.Collections;
-using DG.Tweening.Core.Easing;
-using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.InputSystem;
 

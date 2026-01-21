@@ -1,9 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.InputSystem;
-using Unity.VisualScripting.Antlr3.Runtime.Tree;
-using UnityEditor.ShaderGraph;
-using Unity.Mathematics;
+
 
 public class ShootingMechanic : MonoBehaviour
 {

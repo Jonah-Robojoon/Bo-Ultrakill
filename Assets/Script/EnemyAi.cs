@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Rendering;
 
 public class EnemyAi : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class EnemyAi : MonoBehaviour
     private bool inAttack;
     private bool inSight;
     private float dist;
+
+    private float _timer;
 
     [SerializeField] private Transform _rotatable;
 
@@ -157,12 +160,15 @@ public class EnemyAi : MonoBehaviour
 
     private void DamagePlayerDuringAttack()
     {
-        float _Playerdistance = Vector3.Distance(transform.position, player.transform.position);
-        
-        if (_Playerdistance <= attackRange)
-        {
-            onPlayerHit?.Invoke();
-        }
+
+           
+            float _Playerdistance = Vector3.Distance(transform.position, player.transform.position);
+
+            if (_Playerdistance <= attackRange)
+            {
+           
+                onPlayerHit?.Invoke();
+            }
     }
 
     private void HealPlayer()

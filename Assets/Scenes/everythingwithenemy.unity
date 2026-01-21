@@ -2439,14 +2439,14 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 2083370341}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -3012,7 +3012,7 @@ RectTransform:
   m_GameObject: {fileID: 985589940}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.7566, y: 1.7566, z: 1.7566}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 682344361}
@@ -5598,18 +5598,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2028069989}
-  m_LocalRotation: {x: -0, y: -0, z: 0.054910965, w: 0.9984913}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.1987402, y: 3.866145, z: 2.2232}
+  m_LocalRotation: {x: -0, y: -0, z: 0.057067633, w: 0.9983703}
+  m_LocalPosition: {x: 0, y: 0, z: 63.999}
+  m_LocalScale: {x: 3.2773244, y: 3.8388116, z: 2.207482}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1020038254}
   - {fileID: 1418465934}
   m_Father: {fileID: 682344361}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 6.296}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 6.543}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -615, y: -434}
+  m_AnchoredPosition: {x: -618, y: -428}
   m_SizeDelta: {x: -1760, y: -1060}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2028069991
@@ -6102,5 +6102,5 @@ SceneRoots:
   - {fileID: 1601799572}
   - {fileID: 1921430319}
   - {fileID: 163431951}
-  - {fileID: 682344361}
   - {fileID: 1694380349}
+  - {fileID: 682344361}
