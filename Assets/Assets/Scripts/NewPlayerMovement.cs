@@ -28,7 +28,7 @@ public class NewPlayerMovement : MonoBehaviour
     {
         if (!allowMovement && inputDirection != new Vector2(0,0))
         {
-            inputDirection = new Vector2(0, 0);
+            //inputDirection = new Vector2(0, 0);
         }
 
         if (usedGravity)

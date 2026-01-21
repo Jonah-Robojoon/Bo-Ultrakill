@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -22,6 +23,9 @@ public class EnemyAi : MonoBehaviour
     private float dist;
 
     [SerializeField] private Transform _rotatable;
+
+    public static Action onPlayerHit;
+    public static Action onPlayerHeal;
 
     private void Awake()
     {
@@ -52,6 +56,7 @@ public class EnemyAi : MonoBehaviour
 
         if (_isDeing == true) 
         {
+            HealPlayer();
             anim.SetBool("isDeing", true);
         }
         if (player == null) return;
@@ -117,6 +122,7 @@ public class EnemyAi : MonoBehaviour
         if (!alreadyAttacked)
         {
             anim.SetBool("isBiting", true);
+            DamagePlayerDuringAttack();
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), attackCooldown);
@@ -146,5 +152,26 @@ public class EnemyAi : MonoBehaviour
             rotated,
             100f * Time.deltaTime  // rotation smoothness
         );
+    }
+
+
+    private void DamagePlayerDuringAttack()
+    {
+        float _Playerdistance = Vector3.Distance(transform.position, player.transform.position);
+        
+        if (_Playerdistance <= attackRange)
+        {
+            onPlayerHit?.Invoke();
+        }
+    }
+
+    private void HealPlayer()
+    {
+        float _Playerdistance = Vector3.Distance(transform.position, player.transform.position);
+        
+        if (_Playerdistance <= attackRange)
+        {
+            onPlayerHeal?.Invoke();
+        }
     }
 }

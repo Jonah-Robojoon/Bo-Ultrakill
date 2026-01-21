@@ -48,8 +48,8 @@ public class CameraMovement : MonoBehaviour
     {
 
             Vector2 read = context.ReadValue<Vector2>();
-            controlerInputX = read.x / 2;
-            controlerInputY = read.y / 2;
+            controlerInputX = read.x * 2;
+            controlerInputY = read.y;
            
 
     }
