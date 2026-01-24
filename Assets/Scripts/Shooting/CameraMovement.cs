@@ -1,5 +1,3 @@
-using Unity.VisualScripting;
-using UnityEditor.Recorder.Input;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -48,8 +46,8 @@ public class CameraMovement : MonoBehaviour
     {
 
             Vector2 read = context.ReadValue<Vector2>();
-            controlerInputX = read.x / 2;
-            controlerInputY = read.y / 2;
+            controlerInputX = read.x * 2;
+            controlerInputY = read.y;
            
 
     }

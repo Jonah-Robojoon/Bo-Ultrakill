@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Rendering;
 
 public class EnemyAi : MonoBehaviour
 {
@@ -17,8 +19,16 @@ public class EnemyAi : MonoBehaviour
     public float attackCooldown = 1.5f;
     private bool _stopMovement = false;
     public bool _isDeing = false;
+    private bool inAttack;
+    private bool inSight;
+    private float dist;
+
+    private float _timer;
 
     [SerializeField] private Transform _rotatable;
+
+    public static Action onPlayerHit;
+    public static Action onPlayerHeal;
 
     private void Awake()
     {
@@ -35,20 +45,30 @@ public class EnemyAi : MonoBehaviour
         agent.stoppingDistance = attackRange * 0.9f; // avoid sliding close
 
     }
+    private void Update()
+    {
+        dist = Vector3.Distance(transform.position, player.position);
 
+        inSight = dist <= sightRange;
+
+
+        inAttack = dist <= attackRange;
+    }
     private void FixedUpdate()
     {
 
         if (_isDeing == true) 
         {
+            HealPlayer();
             anim.SetBool("isDeing", true);
         }
         if (player == null) return;
 
-        float dist = Vector3.Distance(transform.position, player.position);
+        
 
-        bool inSight = dist <= sightRange;
-        bool inAttack = dist <= attackRange;
+        
+        
+        
 
         if (inAttack)
         {
@@ -62,13 +82,13 @@ public class EnemyAi : MonoBehaviour
         {
             StopMoving();
         }
-
+        RotateTowardsTarget();
         // Smooth rotation only when allowed & not inside attack range
-        if (!_stopMovement && dist > attackRange)
+        /*if (!_stopMovement && dist > attackRange)
         {
             RotateTowardsTarget();
         }
-
+        */
         // animation speed matches movement (optional but fixes skating)
         //anim.SetFloat("Speed", agent.velocity.magnitude);
     }
@@ -105,6 +125,7 @@ public class EnemyAi : MonoBehaviour
         if (!alreadyAttacked)
         {
             anim.SetBool("isBiting", true);
+            DamagePlayerDuringAttack();
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), attackCooldown);
@@ -132,7 +153,31 @@ public class EnemyAi : MonoBehaviour
         _rotatable.rotation = Quaternion.Slerp(
             _rotatable.rotation,
             rotated,
-            5f * Time.deltaTime  // rotation smoothness
+            100f * Time.deltaTime  // rotation smoothness
         );
+    }
+
+
+    private void DamagePlayerDuringAttack()
+    {
+
+           
+            float _Playerdistance = Vector3.Distance(transform.position, player.transform.position);
+
+            if (_Playerdistance <= attackRange)
+            {
+           
+                onPlayerHit?.Invoke();
+            }
+    }
+
+    private void HealPlayer()
+    {
+        float _Playerdistance = Vector3.Distance(transform.position, player.transform.position);
+        
+        if (_Playerdistance <= attackRange)
+        {
+            onPlayerHeal?.Invoke();
+        }
     }
 }
